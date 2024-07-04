@@ -2,6 +2,7 @@ using InheritanceAndCasting.Shapes;
 using SkiaSharp;
 using SkiaSharp.Views.Desktop;
 using System.Diagnostics.Contracts;
+using System.Threading;
 
 namespace InheritanceAndCasting
 {
@@ -12,6 +13,7 @@ namespace InheritanceAndCasting
         private Brush _brush = Brushes.Gray;
         private Pen _pen = new Pen(Color.Gray, 1);
         private CancellationTokenSource _cancellationTokenSource;
+        private CancellationTokenSource _cancellationTokenSourceCircles = new CancellationTokenSource();
 
         private Action<Type>? Completed;
 
@@ -168,16 +170,28 @@ namespace InheritanceAndCasting
 
         private async void Btn_Circle_Click(object sender, EventArgs e)
         {
-            var token = _cancellationTokenSource.Token;
             Btn_Circle.Enabled = false;
             Txt_Status.Text = "Processing circles...";
-            await CreateCircles();
-            await Task.Delay(10);
-            await RemoveShapes();
-            skControl.Refresh();
-            Txt_Status.Text = "Circles tasks completed";
-            Btn_Circle.Enabled = true;
-            Completed?.Invoke(typeof(CCircle));
+            _cancellationTokenSourceCircles = new CancellationTokenSource();
+
+            try
+            {
+                await CreateCircles(_cancellationTokenSourceCircles.Token);
+                await Task.Delay(10);
+                await RemoveShapes();
+                Completed?.Invoke(typeof(CCircle));
+                Txt_Status.Text = "Circles tasks completed";
+            }
+            catch (OperationCanceledException ex)
+            {
+                Txt_Status.Text = "Circle opration canceled";
+            }
+            finally
+            {
+                await RemoveShapes();
+                skControl.Refresh();
+                Btn_Circle.Enabled = true;
+            }
         }
 
         private async void Btn_Rectangle_Click(object sender, EventArgs e)
@@ -310,13 +324,18 @@ namespace InheritanceAndCasting
             });
         }
 
-        private async Task CreateCircles()
+        private async Task CreateCircles(CancellationToken token)
         {
             await Task.Run(() =>
             {
                 List<Task> tasks = new List<Task>();
                 Enumerable.Range(1, (int)Num_TotalAmountOfParticularShape.Value).ToList().ForEach(x =>
                 {
+                    if (token.IsCancellationRequested)
+                    {
+                        token.ThrowIfCancellationRequested();
+                    }
+
                     var t = CreateCircle();
                     tasks.Add(t);
                     Thread.Sleep(DRAW_TIMEOUT);
@@ -642,6 +661,8 @@ namespace InheritanceAndCasting
         private async void Btn_Cancel_Click(object sender, EventArgs e)
         {
             await Task.Run(() => { _cancellationTokenSource?.Cancel(); });
+
+            await Task.Run(() => { _cancellationTokenSourceCircles?.Cancel(); });
         }
     }
 }
