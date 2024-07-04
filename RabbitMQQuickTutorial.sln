@@ -1,0 +1,61 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.34916.146
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RMQAdvancedProducer", "RMQAdvancedProducer\RMQAdvancedProducer.csproj", "{1F49647F-59F9-4A49-B257-41FC09D05003}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RMQAdvancedConsumer", "RMQAdvancedConsumer\RMQAdvancedConsumer.csproj", "{B1256456-E4AA-4F4A-A14A-9D3C76C96151}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RMQImageTaskProducer", "RMQImageTaskProducer\RMQImageTaskProducer.csproj", "{2676B812-B932-421E-998A-D16FCEA25C0A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RMQImageTaskConsumer", "RMQImageTaskConsumer\RMQImageTaskConsumer.csproj", "{298C1008-816B-4689-9DDB-F43A184C2352}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InheritanceAndCasting", "InheritanceAndCasting\InheritanceAndCasting.csproj", "{68300FBB-A951-4C65-8E74-E3B3A94E2E63}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RMQ_RpcServer_Consumer", "RMQ_RpcServer_Consumer\RMQ_RpcServer_Consumer.csproj", "{D1FCCB55-F183-4714-903B-15D36BCCFE6F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IRmqTaskInfo", "IRmqTaskInfo\IRmqTaskInfo.csproj", "{1F3039DC-0BD2-4E46-827C-6E30C271F447}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1F49647F-59F9-4A49-B257-41FC09D05003}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1F49647F-59F9-4A49-B257-41FC09D05003}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1F49647F-59F9-4A49-B257-41FC09D05003}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1F49647F-59F9-4A49-B257-41FC09D05003}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B1256456-E4AA-4F4A-A14A-9D3C76C96151}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B1256456-E4AA-4F4A-A14A-9D3C76C96151}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B1256456-E4AA-4F4A-A14A-9D3C76C96151}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B1256456-E4AA-4F4A-A14A-9D3C76C96151}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2676B812-B932-421E-998A-D16FCEA25C0A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2676B812-B932-421E-998A-D16FCEA25C0A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2676B812-B932-421E-998A-D16FCEA25C0A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2676B812-B932-421E-998A-D16FCEA25C0A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{298C1008-816B-4689-9DDB-F43A184C2352}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{298C1008-816B-4689-9DDB-F43A184C2352}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{298C1008-816B-4689-9DDB-F43A184C2352}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{298C1008-816B-4689-9DDB-F43A184C2352}.Release|Any CPU.Build.0 = Release|Any CPU
+		{68300FBB-A951-4C65-8E74-E3B3A94E2E63}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{68300FBB-A951-4C65-8E74-E3B3A94E2E63}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{68300FBB-A951-4C65-8E74-E3B3A94E2E63}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{68300FBB-A951-4C65-8E74-E3B3A94E2E63}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D1FCCB55-F183-4714-903B-15D36BCCFE6F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D1FCCB55-F183-4714-903B-15D36BCCFE6F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D1FCCB55-F183-4714-903B-15D36BCCFE6F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D1FCCB55-F183-4714-903B-15D36BCCFE6F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1F3039DC-0BD2-4E46-827C-6E30C271F447}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1F3039DC-0BD2-4E46-827C-6E30C271F447}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1F3039DC-0BD2-4E46-827C-6E30C271F447}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1F3039DC-0BD2-4E46-827C-6E30C271F447}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {09E51F6F-8E0C-4268-BF04-EC1388D43D36}
+	EndGlobalSection
+EndGlobal
