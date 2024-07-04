@@ -1,6 +1,6 @@
 ﻿using SkiaSharp;
 
-namespace InheritanceAndCasting
+namespace InheritanceAndCasting.Shapes
 {
     internal class CCircle : CShape
     {
